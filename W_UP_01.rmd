@@ -50,10 +50,6 @@ Pushups depends on positions;so we wnat to use a numerical~cat helper file
 basicCN <- ggplot(mydata,aes(x=position,y=pushups))
 ```
 ## Now add in boxplot
-
-```{r}
-basicCN + geom_boxplot()
-```
   
   
 ### get fancy  
@@ -62,9 +58,21 @@ basicCN + geom_boxplot()
 basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="line player vs. skill")
 ```
 
+This boxplot shows the results of the football players pushup drills. The plot shows 75% of skill players are able to do more pushups in two minutes than most of the line players. The highest line for the line players is only bout a quarter of the way past the line for the least amount of pushups for the skill players.
+
+
 ### Numerical Descriptive Results
 
+
+
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+
+```{r}
+favstats(pushups~position,data=mydata)
+```
+
+The mean number of pushups for line players was 17 and the skills player mean number was 49. That shows that the average skill player can do almost three times more pushups in two minutes than line players.
 
 ## Inferential Results
 
